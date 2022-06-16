@@ -1,0 +1,99 @@
+group 'ai.g42healthcare.uaepass.uaepass_plugin'
+version '1.0'
+
+buildscript {
+    //UAE PASS START -- Enable Kotlin Version Start
+    ext.kotlin_version = '1.3.72'
+    //UAE PASS END -- Enable Kotlin Version End
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        flatDir {
+        dirs 'libs'
+      }
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+android {
+    compileSdkVersion 28
+    defaultConfig {
+//        applicationId "ai.g42healthcare.uaepass"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //UAE PASS START -- Adding Custom Scheme Variables
+        buildConfigField "String", "URI_SCHEME", "\"flutter_uae_pass\"" // Change to your app name or any custom scheme. Donot use uaepasssample
+        buildConfigField "String", "URI_HOST_SUCCESS", "\"success\""
+        buildConfigField "String", "URI_HOST_FAILURE", "\"failure\""
+        buildConfigField "String", "CLIENT_ID", "\"changeme\"" // Change the client id to the one provided to you.
+        buildConfigField "String", "CLIENT_SECRET", "\"changeme\"" // Change the client secret to the one provided to you.
+        buildConfigField "String", "REDIRECT_URL", "\"changeme\"" // Change the redirect url to the one provided to you.
+        buildConfigField "Integer", "ENVIRONMENT", "1" // Change the environment to 0, 1 or 2. 0 is for qa, 1 is for staging and 2 is for production.
+
+        manifestPlaceholders = [
+                host_success: "success",
+                host_failure: "failure",
+                scheme      : "flutter_uae_pass" // Change to your app name or any custom scheme. Donot use uaepasssample
+        ]
+        //UAE PASS END -- Adding Custom Scheme Variables
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+//    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    implementation (name: 'libraryuaepass', ext: 'aar')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.4.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.loopj.android:android-async-http:1.4.9'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //UAE PASS START -- Enable Kotlin Dependency Start
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //UAE PASS END -- Enable Kotlin Dependency End
+}
+
+// android {
+//     compileSdkVersion 31
+
+//     compileOptions {
+//         sourceCompatibility JavaVersion.VERSION_1_8
+//         targetCompatibility JavaVersion.VERSION_1_8
+//     }
+
+//     defaultConfig {
+//         minSdkVersion 16
+//     }
+// }

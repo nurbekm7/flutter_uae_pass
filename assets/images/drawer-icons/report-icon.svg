@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="report_issue" data-name="report issue" transform="translate(-29 -579)">
+    <rect id="Rectangle_16" data-name="Rectangle 16" width="30" height="30" transform="translate(29 579)" fill="none"/>
+    <path id="Path_2055" data-name="Path 2055" d="M14,24.309a1.836,1.836,0,0,1-.9-.24L5.9,19.9A1.8,1.8,0,0,1,5,18.393v-8.4a1.8,1.8,0,0,1,.9-1.56l7.2-4.164a1.848,1.848,0,0,1,1.8,0l7.2,4.164a1.8,1.8,0,0,1,.9,1.56v8.4a1.8,1.8,0,0,1-.9,1.56l-7.2,4.164a1.836,1.836,0,0,1-.9.192ZM14,5.277a.54.54,0,0,0-.3.084L6.5,9.513a.624.624,0,0,0-.3.48v8.4a.624.624,0,0,0,.3.528l7.2,4.152a.6.6,0,0,0,.6,0l7.2-4.152a.624.624,0,0,0,.3-.528v-8.4a.624.624,0,0,0-.3-.528L14.3,5.313a.54.54,0,0,0-.3-.036Z" transform="translate(30 579.887)" fill="#707070"/>
+    <path id="Path_2056" data-name="Path 2056" d="M12,9h1.2v6H12Z" transform="translate(31.4 580.88)" fill="#707070"/>
+    <path id="Path_2057" data-name="Path 2057" d="M12,15h1.2v1.2H12Z" transform="translate(31.4 582.08)" fill="#707070"/>
+  </g>
+</svg>
