@@ -79,16 +79,7 @@ class DashboardView extends GetView<DashboardController> {
               color: Colors.white,
               child: SingleChildScrollView(
                   child: AnimationLimiter(
-                child: Column(
-                  children: AnimationConfiguration.toStaggeredList(
-                    duration: const Duration(seconds: 1),
-                    childAnimationBuilder: (widget) => SlideAnimation(
-                      horizontalOffset: 50.0,
-                      child: FadeInAnimation(
-                        child: widget,
-                      ),
-                    ),
-                  ),
+                child: Column(             
                 ),
               )),
             ),
